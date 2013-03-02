@@ -1,19 +1,12 @@
 __author__ = 'eriasu'
 #Imports
-import pygame
-from pygame.locals import  *
+from g_escenas import Director
+from escenas import Escena_Inicial
 #-------
-#Constantes
-Largo   =   600
-Ancho   =   800
-#---------
-#Clases
-#
 #Funciones
 def main():
-    pygame.init()
-    return 0
-#
-#Funcion MAin
+    director = Director("Aero Fighter JE")
+    director.ejecutar(Escena_Inicial(),60)
+#------------
 if __name__=="__main__":
     main()
