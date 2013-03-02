@@ -1,7 +1,7 @@
 __author__ = 'eriasu'
 #Imports
 import pygame
-from Config import Pantalla
+from Comun import Pantalla
 #-------
 #Clases
 class Director():

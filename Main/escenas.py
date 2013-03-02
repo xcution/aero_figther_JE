@@ -1,6 +1,6 @@
 __author__ = 'eriasu'
 import pygame
-from Config import Width,Height,Pantalla,load_image,Texto,cargar_musica
+from Comun import Width,Height,Pantalla,load_image,Texto,cargar_musica
 from g_escenas import Escena
 class Escena_Inicial(Escena):
     def __init__(self):
