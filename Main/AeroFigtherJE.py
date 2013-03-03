@@ -6,7 +6,7 @@ from escenas import Escena_Inicial
 #Funciones
 def main():
     director = Director("Aero Fighter JE")
-    director.ejecutar(Escena_Inicial(),60)
+    director.ejecutar(Escena_Inicial(),30)
 #------------
 if __name__=="__main__":
     main()

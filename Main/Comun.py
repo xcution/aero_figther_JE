@@ -3,8 +3,8 @@ import  pygame
 from pygame.locals import  RLEACCEL
 import os
 #Constantes
-Width  =   800
-Height =   600
+Width  =   600
+Height =   700
 Pantalla = (Width,Height)
 #Clases
 class spritesheet(object):
@@ -34,15 +34,31 @@ def load_image(filename,alpha=False,directorio="Imagenes"):
     else:
         image= image.convert()
     return image
-def cargar_sonido():
-    pass
-def cargar_musica(nombre,directorio="musica",veces_a_repetir=0):
-    ruta = os.path.join(directorio,nombre)
-    try:
-        pygame.mixer.music.load(ruta)
-    except pygame.error,message:
-        raise SystemExit,message
-    pygame.mixer.music.play(veces_a_repetir)
+class Sonido():
+    def __init__(self,nombre,directorio="Sonidos"):
+        self.nombre=nombre
+        self.directorio=directorio
+    def cargar_sonido(self):
+        ruta = os.path.join(self.directorio,self.nombre)
+        sonido = pygame.mixer.Sound(ruta)
+        sonido.play()
+
+class musica():
+    def __init__(self,nombre,directorio="musica"):
+        self.nombre=nombre
+        self.directorio=directorio
+
+
+
+    def cargar_musica(self,veces_a_repetir=0):
+        ruta = os.path.join(self.directorio,self.nombre)
+        try:
+            pygame.mixer.music.load(ruta)
+        except pygame.error,message:
+            raise SystemExit,message
+        pygame.mixer.music.play(veces_a_repetir)
+    def detener_musica(self):
+        pygame.mixer.music.stop()
 
 class Texto():
     "Crea un texto para mostrar en pantalla."
