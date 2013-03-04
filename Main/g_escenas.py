@@ -7,6 +7,7 @@ from Comun import Pantalla
 class Director():
     def __init__(self,titulo=""):
         pygame.init()
+        pygame.mixer.init()
         self.pantalla = pygame.display.set_mode(Pantalla)
         pygame.display.set_caption(titulo)
         self.escena = None
